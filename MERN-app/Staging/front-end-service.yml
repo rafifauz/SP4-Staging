@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+  namespace: staging
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: http-port
+  selector:
+    app: client
+#  type: LoadBalancer
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: frontend-ingress
+  namespace: staging
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: stag.frontend.rafifauz.site
+    http:
+      paths:
+      #- path: /belajar
+      - backend:
+          serviceName: frontend-service
+          servicePort: 80
