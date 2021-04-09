@@ -51,7 +51,7 @@ export default class CreateTodo extends Component {
             todo_completed: this.state.todo_completed
         };
 
-        axios.post('http://stag.backend.rafifauz.site/todos/add', newTodo)
+        axios.post('https://stag.backend.rafifauz.site/todos/add', newTodo)
             .then(res => console.log(res.data));
 
         this.setState({
@@ -65,7 +65,8 @@ export default class CreateTodo extends Component {
     render() {
         return ( <
             div style = {
-                { marginTop: 10 } } >
+                { marginTop: 10 }
+            } >
             <
             h3 > Create New Todo < /h3> <
             form onSubmit = { this.onSubmit } >
@@ -77,8 +78,8 @@ export default class CreateTodo extends Component {
             className = "form-control"
             value = { this.state.todo_description }
             onChange = { this.onChangeTodoDescription }
-            /> <
-            /div> <
+            /> < /
+            div > <
             div className = "form-group" >
             <
             label > Responsible: < /label> <
@@ -86,8 +87,8 @@ export default class CreateTodo extends Component {
             className = "form-control"
             value = { this.state.todo_responsible }
             onChange = { this.onChangeTodoResponsible }
-            /> <
-            /div> <
+            /> < /
+            div > <
             div className = "form-group" >
             <
             div className = "form-check form-check-inline" >
@@ -100,8 +101,8 @@ export default class CreateTodo extends Component {
             checked = { this.state.todo_priority === 'Low' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > Low < /label> <
-            /div> <
+            label className = "form-check-label" > Low < /label> < /
+            div > <
             div className = "form-check form-check-inline" >
             <
             input className = "form-check-input"
@@ -112,8 +113,8 @@ export default class CreateTodo extends Component {
             checked = { this.state.todo_priority === 'Medium' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > Medium < /label> <
-            /div> <
+            label className = "form-check-label" > Medium < /label> < /
+            div > <
             div className = "form-check form-check-inline" >
             <
             input className = "form-check-input"
@@ -124,8 +125,8 @@ export default class CreateTodo extends Component {
             checked = { this.state.todo_priority === 'High' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > High < /label> <
-            /div> <
+            label className = "form-check-label" > High < /label> < /
+            div > <
             /div>
 
             <
@@ -135,8 +136,8 @@ export default class CreateTodo extends Component {
             value = "Create Todo"
             className = "btn btn-primary" / >
             <
-            /div> <
-            /form> <
+            /div> < /
+            form > <
             /div>
         )
     }

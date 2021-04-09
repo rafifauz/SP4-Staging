@@ -21,7 +21,7 @@ export default class EditTodo extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://stag.backend.rafifauz.site/todos/' + this.props.match.params.id)
+        axios.get('https://stag.backend.rafifauz.site/todos/' + this.props.match.params.id)
             .then(response => {
                 this.setState({
                     todo_description: response.data.todo_description,
@@ -68,7 +68,7 @@ export default class EditTodo extends Component {
             todo_completed: this.state.todo_completed
         };
         console.log(obj);
-        axios.post('http://stag.backend.rafifauz.site/todos/update/' + this.props.match.params.id, obj)
+        axios.post('https://stag.backend.rafifauz.site/todos/update/' + this.props.match.params.id, obj)
             .then(res => console.log(res.data));
 
         this.props.history.push('/');
@@ -88,8 +88,8 @@ export default class EditTodo extends Component {
             className = "form-control"
             value = { this.state.todo_description }
             onChange = { this.onChangeTodoDescription }
-            /> <
-            /div> <
+            /> < /
+            div > <
             div className = "form-group" >
             <
             label > Responsible: < /label> <
@@ -97,8 +97,8 @@ export default class EditTodo extends Component {
             className = "form-control"
             value = { this.state.todo_responsible }
             onChange = { this.onChangeTodoResponsible }
-            /> <
-            /div> <
+            /> < /
+            div > <
             div className = "form-group" >
             <
             div className = "form-check form-check-inline" >
@@ -111,8 +111,8 @@ export default class EditTodo extends Component {
             checked = { this.state.todo_priority === 'Low' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > Low < /label> <
-            /div> <
+            label className = "form-check-label" > Low < /label> < /
+            div > <
             div className = "form-check form-check-inline" >
             <
             input className = "form-check-input"
@@ -123,8 +123,8 @@ export default class EditTodo extends Component {
             checked = { this.state.todo_priority === 'Medium' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > Medium < /label> <
-            /div> <
+            label className = "form-check-label" > Medium < /label> < /
+            div > <
             div className = "form-check form-check-inline" >
             <
             input className = "form-check-input"
@@ -135,8 +135,8 @@ export default class EditTodo extends Component {
             checked = { this.state.todo_priority === 'High' }
             onChange = { this.onChangeTodoPriority }
             /> <
-            label className = "form-check-label" > High < /label> <
-            /div> <
+            label className = "form-check-label" > High < /label> < /
+            div > <
             /div> <
             div className = "form-check" >
             <
@@ -151,8 +151,8 @@ export default class EditTodo extends Component {
             label className = "form-check-label"
             htmlFor = "completedCheckbox" >
             Completed <
-            /label>                         <
-            /div>
+            /label>                         < /
+            div >
 
             <
             br / >
@@ -164,8 +164,8 @@ export default class EditTodo extends Component {
             value = "Update Todo"
             className = "btn btn-primary" / >
             <
-            /div> <
-            /form> <
+            /div> < /
+            form > <
             /div>
         )
     }

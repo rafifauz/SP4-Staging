@@ -10,8 +10,8 @@ const Todo = props => ( <
     td > { props.todo.todo_priority } < /td> <
     td >
     <
-    Link to = { "/edit/" + props.todo._id } > Edit < /Link> <
-    /td> <
+    Link to = { "/edit/" + props.todo._id } > Edit < /Link> < /
+    td > <
     /tr>
 )
 
@@ -23,7 +23,7 @@ export default class TodosList extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://stag.backend.rafifauz.site/todos/')
+        axios.get('https://stag.backend.rafifauz.site/todos/')
             .then(response => {
                 this.setState({ todos: response.data });
             })
@@ -47,7 +47,8 @@ export default class TodosList extends Component {
             h3 > Todos List < /h3> <
             table className = "table table-striped"
             style = {
-                { marginTop: 20 } } >
+                { marginTop: 20 }
+            } >
             <
             thead >
             <
@@ -56,12 +57,12 @@ export default class TodosList extends Component {
             th > Description < /th> <
             th > Responsible < /th> <
             th > Priority < /th> <
-            th > Action < /th> <
-            /tr> <
+            th > Action < /th> < /
+            tr > <
             /thead> <
             tbody > { this.todoList() } <
-            /tbody> <
-            /table> <
+            /tbody> < /
+            table > <
             /div>
         )
     }
