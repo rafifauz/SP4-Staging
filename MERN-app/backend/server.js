@@ -11,7 +11,7 @@ let Todo = require('./todo.model');
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://mongo.rafifauz.site:27017/todos', { useNewUrlParser: true });
+mongoose.connect('mongodb://stag.mongo.rafifauz.site:27017/todos', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', function() {
@@ -41,11 +41,11 @@ todoRoutes.route('/update/:id').post(function(req, res) {
             res.status(404).send("data is not found");
         else
             todo.todo_description = req.body.todo_description;
-            todo.todo_responsible = req.body.todo_responsible;
-            todo.todo_priority = req.body.todo_priority;
-            todo.todo_completed = req.body.todo_completed;
+        todo.todo_responsible = req.body.todo_responsible;
+        todo.todo_priority = req.body.todo_priority;
+        todo.todo_completed = req.body.todo_completed;
 
-            todo.save().then(todo => {
+        todo.save().then(todo => {
                 res.json('Todo updated!');
             })
             .catch(err => {
@@ -58,7 +58,7 @@ todoRoutes.route('/add').post(function(req, res) {
     let todo = new Todo(req.body);
     todo.save()
         .then(todo => {
-            res.status(200).json({'todo': 'todo added successfully'});
+            res.status(200).json({ 'todo': 'todo added successfully' });
         })
         .catch(err => {
             res.status(400).send('adding new todo failed');
