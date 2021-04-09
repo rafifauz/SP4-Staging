@@ -41,10 +41,10 @@ pipeline {
                 sh "docker rmi $DOCKER_REGISTRY/$DOCKER_IMAGE_BACKEND:${BUILD_NUMBER}"
             }
         }
-        stage('Cleaning FIle....') { 
-            steps {
+        //stage('Cleaning FIle....') { 
+           // steps {
               //  cleanWs()
-            }
-        }
+           // }
+        //}
     }
 }
