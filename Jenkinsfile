@@ -1,6 +1,6 @@
 env.DOCKER_REGISTRY = 'raxer'
-env.DOCKER_IMAGE_FRONTEND = 'frontend-sp4'
-env.DOCKER_IMAGE_BACKEND = 'backend-sp4'
+env.DOCKER_IMAGE_FRONTEND = 'stag-frontend-sp4'
+env.DOCKER_IMAGE_BACKEND = 'stag-backend-sp4'
 
 pipeline {
     agent any 
